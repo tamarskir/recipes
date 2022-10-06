@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+  
+{% block content %}
+
+  <div class="text-center"> 
+
+  <div class="justify-content-md-center">
+                <div class="card mb-4 box-shadow">
+                  <div class="card-body">
+                    <h1 class="card-text">{{recipe.name}}</h1>
+  
+                    <table  class="table table-striped"  style="width: 500px; margin: auto;">
+                      <thead>
+                        <tr>
+                          <th>ingridient</th>
+                          <th>amaunt</th>       
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>{{recipe.ingridient1}}</td>
+                          <td>{{recipe.col1}}</td>
+                        </tbody>
+                          <thead>
+                              <th></th>
+                              <th></th>       
+                          </thead>
+                          <tbody>
+                            <tr>
+                          <td>{{recipe.ingridient2}}</td>
+                          <td>{{recipe.col2}}</td>
+                          {%if recipe.ingridient3%}
+                          <thead>
+                          
+                              <th></th>
+                              <th></th>       
+                          </thead>
+                          <tbody>
+                            <tr>
+                          <td>{{recipe.ingridient3}}</td>
+                          <td>{{recipe.col3}}</td>
+                          {%endif%}
+  
+                          {%if recipe.ingridient4%}
+                          <thead>
+                              <th></th>
+                              <th></th>       
+                          </thead>
+                          <tbody>
+                            <tr>
+                          <td>{{recipe.ingridient4}}</td>
+                          <td>{{recipe.col4}}</td>
+                          {%endif%}
+                          
+                        </tr>
+                    
+                      </tbody>  
+
+                <div class="container">
+    <div class="row">
+      
+    <div class="col-md-4">  
+                           
+                     
+                          
+                      
+                      
+                  
+                  </tbody>   
+                  </table>
+                  
+                  </div>   
+                  
+                    <div class="jumbotron"  style="width: 500px; margin: auto; ;">
+                      <h1>Decription</h1>      
+                      <p>{{recipe.description}}</p>
+                    </div>  
+                    
+                </div>
+
+                <div class="container">
+                 
+                  <!-- Button to Open the Modal -->
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Otzav
+                  </button>
+                
+                  <!-- The Modal -->
+                  <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                      
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                         
+                          <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+                        
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          {%for mes in recipe_mes%}     
+                          <p>{{mes.date}}</p>
+                          <p>{{mes.name}}</p>
+                          <p>{{mes.messages}}</p>
+                          {%endfor%}
+                        </div>
+                       
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <a href="{% url 'messages' id=recipe.id %}" role="button" class="btn font-weight-light text-muted"><button type="submit" class="btn btn-primary"></button>ADDMESSAGES</a> 
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                    
+                     
+                   
+                    
+                  
+                    
+                </div>         
+                    
+                    
+                    
+                    
+                  
+              
+                     
+                  </div>
+                </div>
+  </div> 
+  {% endblock %}
