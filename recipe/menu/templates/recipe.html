@@ -13,7 +13,7 @@
                       <thead>
                         <tr>
                           <th>ingridient</th>
-                          <th>amaunt</th>       
+                          <th>amount</th>       
                       </thead>
                       <tbody>
                         <tr>
@@ -51,62 +51,72 @@
                           <td>{{recipe.col4}}</td>
                           {%endif%}
                           
-                        </tr>
-                    
-                      </tbody>  
+                          {%if recipe.ingridient5%}
+                          <thead>
+                              <th></th>
+                              <th></th>       
+                          </thead>
+                          <tbody>
+                            <tr>
+                          <td>{{recipe.ingridient5}}</td>
+                          <td>{{recipe.col4}}</td>
+                          {%endif%}
 
+                          {%if recipe.ingridient6%}
+                          <thead>
+                              <th></th>
+                              <th></th>       
+                          </thead>
+                          <tbody>
+                            <tr>
+                          <td>{{recipe.ingridient6}}</td>
+                          <td>{{recipe.col4}}</td>
+                          {%endif%}
+                          {%if recipe.ingridient7%}
+                          <thead>
+                              <th></th>
+                              <th></th>       
+                          </thead>
+                          <tbody>
+                            <tr>
+                          <td>{{recipe.ingridient7}}</td>
+                          <td>{{recipe.col4}}</td>
+                          {%endif%}        
+                        </tr>
+                      </tbody>  
                 <div class="container">
     <div class="row">
       
-    <div class="col-md-4">  
-                           
-                     
-                          
-                      
-                      
-                  
+    <div class="col-md-4">                                                                                                        
                   </tbody>   
-                  </table>
-                  
+                  </table>         
                   </div>   
-                  
                     <div class="jumbotron"  style="width: 500px; margin: auto; ;">
                       <h1>Decription</h1>      
                       <p>{{recipe.description}}</p>
-                    </div>  
-                    
-                </div>
-
+                    </div>    
+                  </div>
                 <div class="container">
-                 
-                  <!-- Button to Open the Modal -->
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    Otzav
+                    REVIEWS
                   </button>
-                
-                  <!-- The Modal -->
                   <div class="modal" id="myModal">
                     <div class="modal-dialog">
                       <div class="modal-content">
-                      
-                        <!-- Modal Header -->
                         <div class="modal-header">
-                         
                           <button type="button" class="close" data-dismiss="modal">×</button>
                         </div>
-                        
-                        <!-- Modal body -->
                         <div class="modal-body">
                           {%for mes in recipe_mes%}     
-                          <p>{{mes.date}}</p>
-                          <p>{{mes.name}}</p>
+                          <p align="left">{{mes.date}} <span align="right">{{mes.name}}</span></p>
+                          
                           <p>{{mes.messages}}</p>
                           {%endfor%}
                         </div>
                        
                         <!-- Modal footer -->
                         <div class="modal-footer">
-                          <a href="{% url 'messages' id=recipe.id %}" role="button" class="btn font-weight-light text-muted"><button type="submit" class="btn btn-primary"></button>ADDMESSAGES</a> 
+                          <a href="{% url 'messages' id=recipe.id  %}" role="button" class="btn font-weight-light text-muted"><button type="submit" class="btn btn-primary"></button>add review</a> 
                           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>
                         
