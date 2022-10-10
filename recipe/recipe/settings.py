@@ -75,12 +75,23 @@ WSGI_APPLICATION = 'recipe.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+#DATABASES = {
+    #'default': {
+       # 'ENGINE': 'django.db.backends.sqlite3',
+       # 'NAME': BASE_DIR / 'db.sqlite3',
+   # }
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':  'd1p0es9fomega7',
+        'USER': 'elazgjqaejwmfc',
+        'PASSWORD': '37dd7a4cb3e42b397ecce1c121d4aad530d01b1c2c52717eeb18028ee4a17dc1',
+        'HOST': 'ec2-52-4-87-74.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
+
 
 
 # Password validation

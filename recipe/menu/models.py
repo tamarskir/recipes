@@ -16,12 +16,7 @@ class Category(models.Model):
      
     def get_recipes(self):
         return self.recipe.all()
-
-
-
-    
-    
- 
+  
 
 class Recipe(models.Model):
     category = models.ForeignKey(Category,  on_delete=models.CASCADE, null = True)

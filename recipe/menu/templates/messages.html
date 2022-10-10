@@ -11,20 +11,32 @@
         </div>
     {% endif %} 
 
+    <div class="container">
+        <h2>{{recipe.name}}</h2>
+        <p><img  src="{{recipe.picture_url}}"  style="height: 50%; width: 50%; display: block; margin:auto " align="text-center"> </p>            
+        <table class="table table-borderless">
+        
+
+
+
+
   
-   <p><h1><b>{{recipe.name}}</b></h1></p>
+  <!---- <p><h1>{{recipe.name}}</h1>
+    <img  src="{{recipe.picture_url}}"  style="height: 50%; width: 50%; display: block; margin:auto " align="text-center"> 
+
+</p>
        
       
       
       
 
-   <table>
+   <table clss="center">-->
    {{ message_form.as_table}}
    </table>
         
         <button type="submit" class="btn btn-primary">add review</button>
     </form>
 </div>
-       
+ </div>      
         
 {% endblock %}

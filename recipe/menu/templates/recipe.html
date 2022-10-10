@@ -1,19 +1,25 @@
 {% extends 'base.html' %}
   
 {% block content %}
+<div block="container" >
 
+                            
   <div class="text-center"> 
 
   <div class="justify-content-md-center">
-                <div class="card mb-4 box-shadow">
-                  <div class="card-body">
+              
+             <div class="card "> 
+                <div class="card-body"> 
+                  <img  src="{{recipe.picture_url}}"  style="height: 50%; width: 35%; display: block; margin:auto " align="left"> 
                     <h1 class="card-text">{{recipe.name}}</h1>
-  
-                    <table  class="table table-striped"  style="width: 500px; margin: auto;">
-                      <thead>
+                  
+                     
+                 
+                    <table  class="table table-striped" style="width: 500px; margin: auto;">
                         <tr>
                           <th>ingridient</th>
-                          <th>amount</th>       
+                          <th>amount</th>     
+                      <thead>
                       </thead>
                       <tbody>
                         <tr>
@@ -91,7 +97,7 @@
                   </tbody>   
                   </table>         
                   </div>   
-                    <div class="jumbotron"  style="width: 500px; margin: auto; ;">
+                    <div class="jumbotron"  style="width: 1500px;  ">
                       <h1>Decription</h1>      
                       <p>{{recipe.description}}</p>
                     </div>    
@@ -124,23 +130,18 @@
                     </div>
                   </div>
                   
-                </div>
-                
-                    
-                     
-                   
-                    
-                  
-                    
-                </div>         
+                </div>                         
+                </div>   
+       
                     
                     
-                    
+ </div>       
                     
                   
               
                      
-                  </div>
+                  
                 </div>
   </div> 
+
   {% endblock %}
